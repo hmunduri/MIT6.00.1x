@@ -5,11 +5,8 @@ For example, if s = 'azcbobobegghakl', then your program should print:
 '''
 
 s = 'azcbobobegghakl'
-bob = 'bob'
 numberOfBobs = 0
-pos = 0
-
 for pos in range(len(s)-2):
     if s[pos:pos+3] == 'bob':
-        numberOfBobs = numberOfBobs + 1
+        numberOfBobs += 1
 print "Number of times bob occurs: %i" % numberOfBobs

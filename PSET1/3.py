@@ -21,8 +21,6 @@ for x in range(len(s)-1):
             tmpS = tmpS + s[y]
         else:
             break
-    print "tmpS = " + tmpS
     if len(tmpS) > len(subS):
         subS = tmpS
-    print "subS = " + subS
 print "Longest substring in alphabetical order is: " + subS
