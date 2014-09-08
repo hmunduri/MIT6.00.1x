@@ -1,4 +1,5 @@
 # Problem set 2
+
 ## Problem 1. Paying the minimum
 Write a program to calculate the credit card balance after one year if a person only pays the minimum monthly payment required by the credit card company each month.
 
@@ -36,6 +37,7 @@ Test Cases to Test Your Code With. Be sure to test these on your own machine - a
 Click to See Problem 1 Test Cases
 
 The code you paste into the following box should not specify the values for the variables `balance`, `annualInterestRate`, or `monthlyPaymentRate` - our test code will define those values before testing your submission.
+
 ## Problem 2. Paying debt off in a year
 Now write a program that calculates the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months. By a fixed monthly payment, we mean a single number which does not change each month, but instead is a constant amount that will be paid each month.
 
@@ -63,6 +65,7 @@ Test Cases to Test Your Code With. Be sure to test these on your own machine - a
 Click to See Problem 2 Test Cases
 
 The code you paste into the following box should not specify the values for the variables `balance` or `annualInterestRate` - our test code will define those values before testing your submission.
+
 ## Problem 3. Using bisection search to make the programm faster
 You'll notice that in Problem 2, your monthly payment had to be a multiple of $10. Why did we make it that way? You can try running your code locally so that the payment can be any dollar and cent amount (in other words, the monthly payment is a multiple of $0.01). Does your code still work? It should, but you may notice that your code runs more slowly, especially in cases with very large balances and interest rates. (Note: when your code is running on our servers, there are limits on the amount of computing time each submission is allowed, so your observations from running this experiment on the grading system might be limited to an error message complaining about too much time taken.)
 
