@@ -144,3 +144,45 @@ l m
 Implement the `updateHand` function. Make sure this function has no side effects: i.e., it must not mutate the hand passed in. Before pasting your function definition here, be sure you've passed the appropriate tests in `test_ps4a.py`.
 
 Your implementation of updateHand should be short (ours is 4 lines of code). It does not need to call any helper functions.
+
+#VALID WORDS
+
+At this point, we have written code to generate a random hand and display that hand to the user. We can also ask the user for a word (Python's `raw_input`) and score the word (using your `getWordScore`). However, at this point we have not written any code to verify that a word given by a player obeys the rules of the game. A valid word is in the word list; **and** it is composed entirely of letters from the current hand. Implement the `isValidWord` function.
+
+**Testing**: Make sure the `test_isValidWord` tests pass. In addition, you will want to test your implementation by calling it multiple times on the same hand - what should the correct behavior be? Additionally, the empty string (`''`) is not a valid word - if you code this function correctly, you shouldn't need an additional check for this condition.
+
+Fill in the code for `isValidWord` in `ps4a.py` and be sure you've passed the appropriate tests in test_ps4a.py before pasting your function definition here.
+
+#HAND LENGTH
+We are now ready to begin writing the code that interacts with the player. We'll be implementing the `playHand` function. This function allows the user to play out a single hand. First, though, you'll need to implement the helper `calculateHandlen` function, which can be done in under five lines of code.
+
+#PLAYING A HAND
+In `ps4a.py`, note that in the function `playHand`, there is a bunch of *pseudocode*. This pseudocode is provided to help guide you in writing your function. Check out the Why Pseudocode? resource to learn more about the What and Why of Pseudocode before you start coding your solution.
+
+**Note**: Do not assume that there will always be 7 letters in a hand! The parameter `n` represents the size of the hand.
+
+**Testing**: Before testing your code in the answer box, try out your implementation as if you were playing the game.
+
+#PLAYING A GAME
+A game consists of playing multiple hands. We need to implement one final function to complete our word-game program. Write the code that implements the `playGame` function. You should remove the code that is currently uncommented in the `playGame` body. Read through the specification and make sure you understand what this function accomplishes. For the game, you should use the HAND_SIZE constant to determine the number of cards in a hand.
+
+**Testing**: Try out this implementation as if you were playing the game. Try out different values for `HAND_SIZE` with your program, and be sure that you can play the wordgame with different hand sizes by modifying *only* the variable `HAND_SIZE`.
+
+#COMPUTER CHOOSES A WORD
+**Part B is dependent on your functions from ps4a.py, so be sure to complete ps4a.py before working on ps4b.py**
+
+Now that you have completed your word game code, you decide that you would like to enable your computer (SkyNet) to play the game (your hidden agenda is to prove once and for all that computers are inferior to human intellect!) In Part B you will make a modification to the `playHand` function from part A that will enable this to happen. The idea is that you will be able to compare how you as a user succeed in the game compared to the computer's performance.
+
+It is your responsibility to create the function `compChooseWord(hand, wordList, n)`. Pseudocode is provided in the file `ps4b.py`.
+
+If you follow the pseudocode, you'll create a computer player that is legal, but not always the best. Once you've implemented it following our approach, feel free to try your own approach! As much as we'd love to give you credit for making an improved `compChooseWord` function, we hope you can understand our automatic grading facilities are limited in their ability to accept differing solutions.
+
+#COMPUTER PLAYS A HAND
+Now that we have the ability to let the computer choose a word, we need to set up a function to allow the computer to play a hand - in a manner very similar to Part A's `playHand` function (get the hint?).
+
+Implement the `compPlayHand` function. This function should allow the computer to play a given hand, using the procedure you just wrote in the previous part. This should be very similar to the earlier version in which a user selected the word, although deciding when it is done playing a particular hand will be different.
+
+Be sure to test your function on some randomly generated hands using `dealHand`.
+
+#YOU AND YOUR COMPUTER
+Now that your computer can choose a word, you need to give the computer the option to play. Write the code that re-implements the `playGame` function. You will modify the function to behave as described below in the function's comments. As before, you should use the `HAND_SIZE` constant to determine the number of cards in a hand. Be sure to try out different values for `HAND_SIZE` with your program.
