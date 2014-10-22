@@ -72,7 +72,14 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    if len(word) == n:
+        wordScore = 50
+    else:
+        wordScore = 0
+    for letter in word:
+        wordScore += SCRABBLE_LETTER_VALUES[letter]
+    wordScore *= len(word)
+    return wordScore
 
 
 #
@@ -83,9 +90,9 @@ def displayHand(hand):
     Displays the letters currently in the hand.
 
     For example:
-    >>> displayHand({'a':1, 'x':2, 'l':3, 'e':1})
+    >>>displayHand({'a':1, 'x':2, 'l':3, 'e':1})
     Should print out something like:
-       a x x l l l e
+    >>>a x x l l l e
     The order of the letters is unimportant.
 
     hand: dictionary (string -> int)

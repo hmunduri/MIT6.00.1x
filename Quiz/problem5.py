@@ -19,8 +19,3 @@ def laceStrings(s1, s2):
         else:
             laces = laces + s2[-(len(s2)-len(s1)):]
     return laces
-
-
-s1 = raw_input('s1 > ')
-s2 = raw_input('s2 > ')
-print laceStrings(s1, s2)

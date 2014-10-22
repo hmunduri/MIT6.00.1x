@@ -7,7 +7,3 @@ def McNuggets(n):
     Hint: use a guess and check approach.
     6a+9b+20c=n
     """
-    a = 0
-    b = 0
-    c = 0
-    while (6 * a + 9 * b + 20 * c - n) != 0:

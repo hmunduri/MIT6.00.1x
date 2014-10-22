@@ -1,6 +1,3 @@
-from math import log
-
-
 def myLog(x, b):
     '''
     x: a positive integer
@@ -13,10 +10,3 @@ def myLog(x, b):
         val += 1
         if 0 < x - b**val < b:
             return val
-
-
-x = int(raw_input('x = '))
-b = int(raw_input('b = '))
-print myLog(x, b)
-if log(x, b) == myLog(x, b):
-    print "Success!"
