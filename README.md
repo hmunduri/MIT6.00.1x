@@ -58,3 +58,23 @@ Do not use the keyword `in`. Your function should take in a single string and re
 Define a function `isVowel2(char)` that returns `True` if char is a vowel ('a', 'e', 'i', 'o', or 'u'), and `False` otherwise. You can assume that `char` is a single letter of any case (ie, 'A' and 'a' are both valid).
 
 This function is similar to the previous problem - but this time, do use the keyword `in`. Your function should take in a single string and return a boolean.
+
+## l12p3.py
+To begin: Download L12_hand.py and read through the file. Be sure to understand what's going on in the file. Make a few instances of the Hand class, and play around with the existing methods.
+
+When you have completed reading through the file, implement the update method.
+
+The \_\_str__ method is this:
+```
+    def __str__(self):
+        '''
+        Display a string representation of the hand.
+        '''
+        output = ''
+        for letter in sorted(self.hand.keys()):
+            output += letter * self.hand[letter]
+        return output
+```
+
+## l12p5.py
+Write a generator, genPrimes, that returns the sequence of prime numbers on successive calls to its next() method: 2, 3, 5, 7, 11, ...
