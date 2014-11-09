@@ -227,7 +227,7 @@ def playHand(hand, wordList, n):
 
     # As long as there are still letters left in the hand:
     totalScore = 0
-    while hand != {}:
+    while calculateHandlen(hand) > 0:
         # Display the hand
         print hand
         # Ask user for input

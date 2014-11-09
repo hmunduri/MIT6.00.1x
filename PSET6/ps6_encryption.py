@@ -2,10 +2,11 @@
 #
 # Part 1 - HAIL CAESAR!
 
-import string
 import random
+from sting import lowercase
 
 WORDLIST_FILENAME = "words.txt"
+
 
 # -----------------------------------
 # Helper code
@@ -13,7 +14,7 @@ WORDLIST_FILENAME = "words.txt"
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
-    
+
     Depending on the size of the word list, this function may
     take a while to finish.
     """
@@ -22,6 +23,7 @@ def loadWords():
     wordList = inFile.read().split()
     print "  ", len(wordList), "words loaded."
     return wordList
+
 
 def isWord(wordList, word):
     """
@@ -41,14 +43,16 @@ def isWord(wordList, word):
     word = word.strip(" !@#$%^&*()-_+={}[]|\\:;'<>?,./\"")
     return word in wordList
 
+
 def randomWord(wordList):
     """
     Returns a random word.
 
-    wordList: list of words  
+    wordList: list of words
     returns: a word from wordList at random
     """
     return random.choice(wordList)
+
 
 def randomString(wordList, n):
     """
@@ -58,6 +62,7 @@ def randomString(wordList, n):
     returns: a string of random words separated by spaces.
     """
     return " ".join([randomWord(wordList) for _ in range(n)])
+
 
 def randomScrambled(wordList, n):
     """
@@ -74,14 +79,14 @@ def randomScrambled(wordList, n):
     """
     s = randomString(wordList, n) + " "
     shifts = [(i, random.randint(0, 25)) for i in range(len(s)) if s[i-1] == ' ']
-    return applyShifts(s, shifts)[:-1]
+    return applyShift(s, shifts)[:-1]
+
 
 def getStoryString():
     """
     Returns a story in encrypted text.
     """
     return open("story.txt", "r").read()
-
 
 # (end of helper code)
 # -----------------------------------
@@ -99,8 +104,12 @@ def buildCoder(shift):
     shift: 0 <= int < 26
     returns: dict
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    # TODO.
+    shiftedDict = {}
+    for letter in lowercase:
+        shiftedDict[letter] = 0
+    return "Not yet implemented."  # Remove this comment when you code the function
+
 
 def applyCoder(text, coder):
     """
@@ -110,8 +119,9 @@ def applyCoder(text, coder):
     coder: dict with mappings of characters to shifted characters
     returns: text after mapping coder chars to original text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    # TODO.
+    return "Not yet implemented."  # Remove this comment when you code the function
+
 
 def applyShift(text, shift):
     """
@@ -124,9 +134,10 @@ def applyShift(text, shift):
     shift: amount to shift the text (0 <= int < 26)
     returns: text after being shifted by specified amount.
     """
-    ### TODO.
-    ### HINT: This is a wrapper function.
-    return "Not yet implemented." # Remove this comment when you code the function
+    # TODO.
+    # HINT: This is a wrapper function.
+    return "Not yet implemented."  # Remove this comment when you code the function
+
 
 #
 # Problem 2: Decryption
@@ -138,8 +149,9 @@ def findBestShift(wordList, text):
     text: string
     returns: 0 <= int < 26
     """
-    ### TODO
-    return "Not yet implemented." # Remove this comment when you code the function
+    # TODO
+    return "Not yet implemented."  # Remove this comment when you code the function
+
 
 def decryptStory():
     """
@@ -150,13 +162,13 @@ def decryptStory():
 
     returns: string - story in plain text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    # TODO.
+    return "Not yet implemented."  # Remove this comment when you code the function
+
 
 #
 # Build data structures used for entire session and run encryption
 #
-
 if __name__ == '__main__':
     # To test findBestShift:
     wordList = loadWords()
