@@ -6,9 +6,8 @@ Don't be intimidated by the length of this problem set. There is a lot of readin
 
 Let's begin by describing the 6.00 wordgame: This game is a lot like Scrabble or Words With Friends, if you've played those. Letters are dealt to players, who then construct one or more words out of their letters. Each **valid** word receives a score, based on the length of the word and the letters in that word.
 
-The rules of the game are as follows:
-
 ## Dealing
+
   - A player is dealt a hand of n letters chosen at random (assume n=7 for now).
 
   - The player arranges the hand into as many words as they want out of the letters, using each letter at most once.
@@ -16,6 +15,7 @@ The rules of the game are as follows:
   - Some letters may remain unused (these won't be scored).
 
 ## Scoring
+
   - The score for the hand is the sum of the scores for each word formed.
 
   - The score for a word is the sum of the points for letters in the word, multiplied by the length of the word, plus 50 points if all n letters are used on the first word created.
@@ -85,6 +85,7 @@ Test the `updateHand()` implementation.
 Test the `isValidWord()` implementation.
 
 # WORD SCORES 
+
 The first step is to implement some code that allows us to calculate the score for a single word. The function `getWordScore` should accept as input a string of lowercase letters (a word) and return the integer score for that word, using the game's scoring rules.
 
 ## HINTS
@@ -96,7 +97,8 @@ The first step is to implement some code that allows us to calculate the score f
   - Fill in the code for `getWordScore` in `ps4a.py` and be sure you've passed the appropriate tests in `test_ps4a.py` before pasting your function definition here.
 
 # DEALING WITH HANDS
-Please read this problem entirely!!** The majority of this problem consists of learning how to read code, which is an incredibly useful and important skill. At the end, you will implement a short function. Be sure to take your time on this problem - it may seem easy, but reading someone else's code can be challenging and this is an important exercise.
+
+**Please read this problem entirely!!** The majority of this problem consists of learning how to read code, which is an incredibly useful and important skill. At the end, you will implement a short function. Be sure to take your time on this problem - it may seem easy, but reading someone else's code can be challenging and this is an important exercise.
 
 ## REPRESENTING HANDS
 
@@ -111,6 +113,7 @@ KeyError: 'e'
 >>> hand.get('e', 0)
 0
 ```
+
 ## CONVERTING WORDS INTO DICTIONARY REPRESENTATION
 
 One useful function we've defined for you is `getFrequencyDict`, defined near the top of `ps4a.py`. When given a string of letters as an input, it returns a dictionary where the keys are letters and the values are the number of times that letter is represented in the input string. For example:
@@ -154,9 +157,11 @@ At this point, we have written code to generate a random hand and display that h
 Fill in the code for `isValidWord` in `ps4a.py` and be sure you've passed the appropriate tests in test_ps4a.py before pasting your function definition here.
 
 # HAND LENGTH
+
 We are now ready to begin writing the code that interacts with the player. We'll be implementing the `playHand` function. This function allows the user to play out a single hand. First, though, you'll need to implement the helper `calculateHandlen` function, which can be done in under five lines of code.
 
 # PLAYING A HAND
+
 In `ps4a.py`, note that in the function `playHand`, there is a bunch of *pseudocode*. This pseudocode is provided to help guide you in writing your function. Check out the Why Pseudocode? resource to learn more about the What and Why of Pseudocode before you start coding your solution.
 
 **Note**: Do not assume that there will always be 7 letters in a hand! The parameter `n` represents the size of the hand.
@@ -164,11 +169,67 @@ In `ps4a.py`, note that in the function `playHand`, there is a bunch of *pseudoc
 **Testing**: Before testing your code in the answer box, try out your implementation as if you were playing the game.
 
 # PLAYING A GAME
+
 A game consists of playing multiple hands. We need to implement one final function to complete our word-game program. Write the code that implements the `playGame` function. You should remove the code that is currently uncommented in the `playGame` body. Read through the specification and make sure you understand what this function accomplishes. For the game, you should use the HAND_SIZE constant to determine the number of cards in a hand.
 
 **Testing**: Try out this implementation as if you were playing the game. Try out different values for `HAND_SIZE` with your program, and be sure that you can play the wordgame with different hand sizes by modifying *only* the variable `HAND_SIZE`.
 
+How the game should look:
+```
+Loading word list from file...
+   83667 words loaded.
+Enter n to deal a new hand, r to replay the last hand, or e to end game: r
+You have not played a hand yet. Please play a new hand first!
+
+Enter n to deal a new hand, r to replay the last hand, or e to end game: n
+Current Hand: p z u t t t o
+Enter word, or a "." to indicate that you are finished: tot
+"tot" earned 9 points. Total: 9 points
+
+Current Hand: p z u t
+Enter word, or a "." to indicate that you are finished: .
+Goodbye! Total score: 9 points.
+
+Enter n to deal a new hand, r to replay the last hand, or e to end game: r
+Current Hand: p z u t t t o
+Enter word, or a "." to indicate that you are finished: top
+"top" earned 15 points. Total: 15 points
+
+Current Hand: z u t t
+Enter word, or a "." to indicate that you are finished: tu
+Invalid word, please try again.
+
+Current Hand: z u t t
+Enter word, or a "." to indicate that you are finished: .
+Goodbye! Total score: 15 points.
+
+Enter n to deal a new hand, r to replay the last hand, or e to end game: n
+Current Hand: a q w f f i p
+Enter word, or a "." to indicate that you are finished: paw
+"paw" earned 24 points. Total: 24 points
+
+Current Hand: q f f i
+Enter word, or a "." to indicate that you are finished: qi
+"qi" earned 22 points. Total: 46 points
+
+Current Hand: f f
+Enter word, or a "." to indicate that you are finished: .
+Goodbye! Total score: 46 points.
+
+Enter n to deal a new hand, r to replay the last hand, or e to end game: n
+Current Hand: a r e t i i n
+Enter word, or a "." to indicate that you are finished: inertia
+"inertia" earned 99 points. Total: 99 points.
+
+Run out of letters. Total score: 99 points.
+
+Enter n to deal a new hand, r to replay the last hand, or e to end game: x
+Invalid command.
+Enter n to deal a new hand, r to replay the last hand, or e to end game: e
+```
+
 # COMPUTER CHOOSES A WORD
+
 **Part B is dependent on your functions from ps4a.py, so be sure to complete ps4a.py before working on ps4b.py**
 
 Now that you have completed your word game code, you decide that you would like to enable your computer (SkyNet) to play the game (your hidden agenda is to prove once and for all that computers are inferior to human intellect!) In Part B you will make a modification to the `playHand` function from part A that will enable this to happen. The idea is that you will be able to compare how you as a user succeed in the game compared to the computer's performance.
@@ -178,6 +239,7 @@ It is your responsibility to create the function `compChooseWord(hand, wordList,
 If you follow the pseudocode, you'll create a computer player that is legal, but not always the best. Once you've implemented it following our approach, feel free to try your own approach! As much as we'd love to give you credit for making an improved `compChooseWord` function, we hope you can understand our automatic grading facilities are limited in their ability to accept differing solutions.
 
 # COMPUTER PLAYS A HAND
+
 Now that we have the ability to let the computer choose a word, we need to set up a function to allow the computer to play a hand - in a manner very similar to Part A's `playHand` function (get the hint?).
 
 Implement the `compPlayHand` function. This function should allow the computer to play a given hand, using the procedure you just wrote in the previous part. This should be very similar to the earlier version in which a user selected the word, although deciding when it is done playing a particular hand will be different.
@@ -185,4 +247,5 @@ Implement the `compPlayHand` function. This function should allow the computer t
 Be sure to test your function on some randomly generated hands using `dealHand`.
 
 # YOU AND YOUR COMPUTER
+
 Now that your computer can choose a word, you need to give the computer the option to play. Write the code that re-implements the `playGame` function. You will modify the function to behave as described below in the function's comments. As before, you should use the `HAND_SIZE` constant to determine the number of cards in a hand. Be sure to try out different values for `HAND_SIZE` with your program.
