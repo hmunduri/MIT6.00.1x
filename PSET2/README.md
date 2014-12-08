@@ -31,13 +31,6 @@ A summary of the required math is found below:
 
 **Updated balance each month** = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
 
-Note that the grading script looks for the order in which each value is printed out. We provide sample test cases below; we suggest you develop your code on your own machine, and make sure your code passes the sample test cases, before you paste it into the box below.
-
-Test Cases to Test Your Code With. Be sure to test these on your own machine - and that you get the same output! - before running your code on this webpage!
-Click to See Problem 1 Test Cases
-
-The code you paste into the following box should not specify the values for the variables `balance`, `annualInterestRate`, or `monthlyPaymentRate` - our test code will define those values before testing your submission.
-
 ## Problem 2. Paying debt off in a year
 Now write a program that calculates the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months. By a fixed monthly payment, we mean a single number which does not change each month, but instead is a constant amount that will be paid each month.
 
@@ -60,11 +53,6 @@ Assume that the interest is compounded monthly according to the balance at the e
 **Monthly unpaid balance** = (Previous balance) - (Minimum monthly payment)
 
 **Updated balance each month** = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
-
-Test Cases to Test Your Code With. Be sure to test these on your own machine - and that you get the same output! - before running your code on this webpage!
-Click to See Problem 2 Test Cases
-
-The code you paste into the following box should not specify the values for the variables `balance` or `annualInterestRate` - our test code will define those values before testing your submission.
 
 ## Problem 3. Using bisection search to make the programm faster
 You'll notice that in Problem 2, your monthly payment had to be a multiple of $10. Why did we make it that way? You can try running your code locally so that the payment can be any dollar and cent amount (in other words, the monthly payment is a multiple of $0.01). Does your code still work? It should, but you may notice that your code runs more slowly, especially in cases with very large balances and interest rates. (Note: when your code is running on our servers, there are limits on the amount of computing time each submission is allowed, so your observations from running this experiment on the grading system might be limited to an error message complaining about too much time taken.)
@@ -90,10 +78,3 @@ In short:
 **Monthly payment upper bound** = (Balance x (1 + Monthly interest rate)12) / 12.0
 
 Write a program that uses these bounds and bisection search (for more info check out the Wikipedia page on bisection search) to find the smallest monthly payment to the cent (no more multiples of $10) such that we can pay off the debt within a year. Try it out with large inputs, and notice how fast it is (try the same large inputs in your solution to Problem 2 to compare!). Produce the same return value as you did in Problem 2.
-
-Note that if you do not use bisection search, your code will not run - your code only has 30 seconds to run on our servers.
-
-Test Cases to Test Your Code With. Be sure to test these on your own machine - and that you get the same output! - before running your code on this webpage!
-Click to See Problem 3 Test Cases
-
-The code you paste into the following box should not specify the values for the variables balance or annualInterestRate - our test code will define those values before testing your submission.
