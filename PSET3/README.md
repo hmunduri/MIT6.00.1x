@@ -1,5 +1,27 @@
 # Problem Set 3
 
+## Radiation exposure
+
+In this problem, you are asked to find the amount of radiation a person is exposed to during some period of time by completing the following function:
+```
+def radiationExposure(start, stop, step):
+    '''
+    Computes and returns the amount of radiation exposed
+    to between the start and stop times. Calls the 
+    function f (defined for you in the grading script)
+    to obtain the value of the function at any point.
+ 
+    start: integer, the time at which exposure begins
+    stop: integer, the time at which exposure ends
+    step: float, the width of each rectangle. You can assume that
+      the step size will always partition the space evenly.
+
+    returns: float, the amount of radiation exposed to 
+      between start and stop times.
+    '''
+```
+To complete this function you'll need to know what the value of the radioactive decay curve is at various points. There is a function f that will be defined for you that you can call from within your function that describes the radioactive decay curve for the problem.
+
 ## Hangman
 
 ### Hangman part 1: Is the word Guessed?
@@ -15,7 +37,7 @@ False
 ```
 For this function, you may assume that all the letters in `secretWord` and `lettersGuessed` are lowercase.
 
-### Printing out the user's guess
+### Part 2: Printing out the user's guess
 Next, implement the function `getGuessedWord` that takes in two parameters - a string, `secretWord`, and a list of letters, `lettersGuessed`. This function returns a string that is comprised of letters and underscores, based on what letters in `lettersGuessed` are in `secretWord`. This shouldn't be too different from `isWordGuessed`!
 
 Example Usage:
@@ -31,7 +53,7 @@ For this problem, you are free to use spacing in any way you wish - our grader w
 
 For this function, you may assume that all the letters in `secretWord` and `lettersGuessed` are lowercase.
 
-### Printing out all availiable letters
+### Part 3: Printing out all availiable letters
 Next, implement the function `getAvailableLetters` that takes in one parameter - a list of letters, `lettersGuessed`. This function returns a string that is comprised of lowercase English letters - all lowercase English letters that are **not** in `lettersGuessed`.
 
 Example Usage:
@@ -51,7 +73,7 @@ Hint: You might consider using `string.ascii_lowercase`, which is a string compr
 abcdefghijklmnopqrstuvwxyz
 ```
 
-### Hangman part 2: The Game
+### Hangman The Game
 Now you will implement the function `hangman`, which takes one parameter - the `secretWord` the user is to guess. This starts up an interactive game of Hangman between the user and the computer. Be sure you take advantage of the three helper functions, `isWordGuessed`, `getGuessedWord`, and `getAvailableLetters`, that you've defined in the previous part.
 
 Hints:
