@@ -1,22 +1,22 @@
 # Problem Set 3
 
-## Radiation exposure
+## Radiation Exposure
 
 In this problem, you are asked to find the amount of radiation a person is exposed to during some period of time by completing the following function:
 ```
 def radiationExposure(start, stop, step):
     '''
     Computes and returns the amount of radiation exposed
-    to between the start and stop times. Calls the 
+    to between the start and stop times. Calls the
     function f (defined for you in the grading script)
     to obtain the value of the function at any point.
- 
+
     start: integer, the time at which exposure begins
     stop: integer, the time at which exposure ends
     step: float, the width of each rectangle. You can assume that
       the step size will always partition the space evenly.
 
-    returns: float, the amount of radiation exposed to 
+    returns: float, the amount of radiation exposed to
       between start and stop times.
     '''
 ```
@@ -30,7 +30,7 @@ Please read the Hangman Introduction before starting this problem. The helper fu
 We'll start by writing 3 simple functions that will help us easily code the Hangman problem. First, implement the function `isWordGuessed` that takes in two parameters - a string, `secretWord`, and a list of letters, `lettersGuessed`. This function returns a boolean - True if `secretWord` has been guessed (ie, all the letters of `secretWord` are in `lettersGuessed`) and False otherwise.
 Example Usage:
 ```
->>> secretWord = 'apple' 
+>>> secretWord = 'apple'
 >>> lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
 >>> print isWordGuessed(secretWord, lettersGuessed)
 False
@@ -42,7 +42,7 @@ Next, implement the function `getGuessedWord` that takes in two parameters - a s
 
 Example Usage:
 ```
->>> secretWord = 'apple' 
+>>> secretWord = 'apple'
 >>> lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
 >>> print getGuessedWord(secretWord, lettersGuessed)
 '_ pp_ e'
@@ -73,7 +73,7 @@ Hint: You might consider using `string.ascii_lowercase`, which is a string compr
 abcdefghijklmnopqrstuvwxyz
 ```
 
-### Hangman The Game
+### Hangman Part 2: The Game
 Now you will implement the function `hangman`, which takes one parameter - the `secretWord` the user is to guess. This starts up an interactive game of Hangman between the user and the computer. Be sure you take advantage of the three helper functions, `isWordGuessed`, `getGuessedWord`, and `getAvailableLetters`, that you've defined in the previous part.
 
 Hints:
