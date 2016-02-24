@@ -9,6 +9,8 @@ Valid vowels are: `a`, `e`, `i`, `o`, and `u`. For example,
 if `s = 'azcbobobegghakl'`, your program should print:
 `Number of vowels: 5`
 """
+
+
 vowels = 'aeiou'
 vowelsCount = 0
 for c in s:

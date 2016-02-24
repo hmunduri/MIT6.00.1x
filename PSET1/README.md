@@ -1,5 +1,5 @@
-#1.py
-##Problem 1: Counting Vowels
+#Problem 1: Counting Vowels (problem1.py)
+
 
 Assume `s` is a string of lower case characters.
 
@@ -8,16 +8,14 @@ Write a program that counts up the number of vowels contained in the string s.
 Valid vowels are: `a`, `e`, `i`, `o`, and `u`. For example, if `s = 'azcbobobegghakl'`, your program should print:
 `Number of vowels: 5`
 
-#2.py
-##Problem 2: Counting 'bob's
+#Problem 2: Counting 'bob's (problem2.py)
 
 Assume `s` is a string of lower case characters.
 
 Write a program that prints the number of times the string `'bob'` occurs in `s`. For example, if `s = 'azcbobobegghakl'`, then your program should print:
 `Number of times bob occurs is: 2`
 
-#3.py
-##Problem 3: Alphabetical Substrings
+#Problem 3: Alphabetical Substrings (problem3.py)
 
 Assume `s` is a string of lower case characters.
 
